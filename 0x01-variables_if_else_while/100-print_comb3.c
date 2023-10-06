@@ -6,27 +6,23 @@
  * Return: Always 0 (Succes)
  */
 
-int main(void)
-{
-	int n;
-	int i = 0;
+int main(void) {
+    int i, j;
 
-	for (n = 0 ; n < 100 ; n++)
-	{
-		putchar(n / 10 + '0');
-		putchar(i + '0');
-		if (n < 99)
-		{
-			putchar(',');
-			putchar(32);
-		}
-		i++;
-		if (i > 9)
-		{
-			i = 0;
-		}
-	}
-	putchar('\n');
-	return (0);
+    for (i = 0; i <= 8; i++) {
+        for (j = i + 1; j <= 9; j++) {
+            putchar((i % 10) + '0');
+            putchar((j % 10) + '0');
+
+            if (i != 8 || j != 9) {
+                putchar(',');
+                putchar(' ');
+            }
+        }
+    }
+
+    putchar('\n');
+
+    return 0;
 }
 
