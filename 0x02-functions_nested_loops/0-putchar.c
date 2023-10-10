@@ -2,19 +2,18 @@
 /**
  * main - Entry point
  *
- * Return: Always 0 (Success)
+ * Return: Alway 0 (Sucess)
  */
+
 int main(void)
 {
-putchar('_');
-putchar('p');
-putchar('u');
-putchar('t');
-putchar('c');
-putchar('h');
-putchar('a');
-putchar('r');
-putchar('\n');
-return (0);
+	char *h = "_putchar\n";
+
+	while (*h)
+	{
+		_putchar(*h);
+		h++;
+	}
+	return (0);
 }
 
