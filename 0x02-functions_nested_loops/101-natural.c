@@ -7,15 +7,20 @@
 int main(void)
 {
 int sum = 0;
-int i;
-for (i = 0; i < 1024; i++)
+int num;
+for (num = 0; num < 1024; num++)
 {
-if (i % 3 == 0 || i % 5 == 0)
+if (num % 3 == 0 || num % 5 == 0)
 {
-sum += i;
+sum += num;
 }
 }
-printf("%d\n", sum);
+while (sum > 0)
+{
+putchar((sum % 10) + '0');
+sum /= 10;
+}
+putchar('\n');
 return (0);
 }
 
