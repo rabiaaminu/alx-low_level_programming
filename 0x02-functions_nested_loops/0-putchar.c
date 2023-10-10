@@ -2,10 +2,18 @@
 /**
  * main - Entry point
  *
- * Return: Always 0 (Success)
+ * Return: Alway 0 (Sucess)
  */
+
 int main(void)
 {
-printf("_putchar\n");
-return (0);
+	char *r = "rabia\n";
+
+	while (*r)
+	{
+		_putchar(*r);
+		r++;
+	}
+	return (0);
 }
+
