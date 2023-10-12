@@ -1,28 +1,21 @@
 #include <stdio.h>
-
 /**
- * main - entry point
+ * main - Entry point
  *
- * Return: always 0 (sucess)
+ * Return: Always 0
  */
 int main(void)
 {
-	unsigned long int num = 612852475143;
-	unsigned long int prim;
-
-	prim = 3;
-	while (prim < num / 2)
-	{
-		if ((num % prim) == 0)
-		{
-			if((prim % 3) == 2)
-				printf(",%lu ", prim);
-		}
-
-		prim+=2;
-	}
-
-	putchar('\n');
-	return (0);
+long n = 612852475143;
+long i;
+for (i = 2; i <= n; i++)
+{
+if (n % i == 0)
+{
+n /= i;
+i--;
 }
-
+}
+printf("%ld\n", i);
+return (0);
+}
