@@ -1,33 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 /**
- * infinite_add - Add two numbers stored as strings.
- *
- * @n1: The first number as a string.
- * @n2: The second number as a string.
- * @r: The buffer to store the result.
- * @size_r: The size of the buffer.
- *
- * Return: A pointer to the result string, or 0 if the result cannot be stored.
+ * Function to add two numbers
+ * @param n1 the first number
+ * @param n2 the second number
+ * @param r the buffer that the function will use to store the result
+ * @param size_r the buffer size
+ * @return a pointer to the result
  */
-char *infinite_add(char *n1, char *n2, char *r, int size_r)
-{
-    int carry = 0;  /* Initialize carry to 0 */
-    int i, j, k;
-
-    for (i = strlen(n1) - 1, j = strlen(n2) - 1, k = size_r - 1; i >= 0 || j >= 0 || carry; i--, j--, k--)
-    {
-        int sum = carry;
-
-        if (i >= 0)
-            sum += n1[i] - '0';
-        if (j >= 0)
-            sum += n2[j] - '0';
-
-        carry = sum / 10;
-        r[k] = (sum % 10) + '0';
-    }
-
-    if (k >= 0)
-        return r + k;
-    else
-        return 0;  /* Result cannot be stored in the buffer */
+char *infinite_add(char *n1, char *n2, char *r, int size_r) {
+if (size_r < (strlen(n1) + strlen(n2) + 1)) {
+return 0;
+}
+int carry = 0;
+for (int i = strlen(n1) - 1, j = strlen(n2) - 1, k = size_r - 1; i >= 0 || j >= 0; i--, j--, k--) {
+int digit1 = i >= 0 ? n1[i] - '0' : 0;
+int digit2 = j >= 0 ? n2[j] - '0' : 0;
+int sum = digit1 + digit2 + carry;
+carry = sum / 10;
+r[k] = (sum % 10) + '0';
+}
+if (carry) {
+r[0] = carry + '0';
+size_r++;
+}
+r[size_r - 1] = '\0';
+return r;
 }
