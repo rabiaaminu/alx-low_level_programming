@@ -62,7 +62,6 @@ int op_div(int a, int b)
   * @b: ...
   * Return: ...
   */
- 
 int op_mod(int a, int b)
 {
 	if (b == 0)
