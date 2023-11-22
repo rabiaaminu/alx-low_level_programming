@@ -8,7 +8,7 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *slow_p = head ,*fast_p = head;
+	const listint_t *slow_p = head, *fast_p = head;
 	size_t ele = 0;
 	int is_loop = 0;
 
@@ -46,7 +46,6 @@ size_t print_listint_safe(const listint_t *head)
 			printf("-> [%p] %d\n", (void *)head, head->next->n);
 			exit(98);
 		}
-
 		printf("[%p] %d\n", (void *)head, head->n);
 		head = head->next;
 	}
